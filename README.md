@@ -7,5 +7,5 @@ Projekt wykorzystuje głębokie sieci neuronowe (CNN, MobileNetV2, ResNet50, Eff
 - `app.py` – aplikacja webowa w Flasku
 - `templates/` i `static/` – pliki HTML/CSS/JS do interfejsu użytkownika
 - `.ipynb` – notebooki do treningu i ewaluacji modeli
-- `.keras` – trenowane modele (niektóre zbyt duże – patrz niżej)
+- `.keras` – trenowane modele (Niektóre modele `.keras` mają ponad 100 MB i nie zostały wrzucone na GitHub.)
 <img width="752" height="740" alt="image" src="https://github.com/user-attachments/assets/c896137f-3bde-4939-8619-cf497848107e" />
