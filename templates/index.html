@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Rozpoznawanie chorób roślin</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 40px; }
+        img { max-width: 300px; margin-top: 20px; }
+        table { margin: 20px auto; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 10px 15px; }
+        th { background-color: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <h1>Rozpoznawanie chorób roślin</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" capture="environment" required onchange="this.form.submit()">
+      </form>
+      
+
+    {% if image_file %}
+        <h3>Wybrany obraz:</h3>
+        <img src="{{ url_for('static', filename=image_file) }}">
+    {% endif %}
+
+    {% if predictions %}
+        <h2>Wyniki:</h2>
+        <table>
+            <tr><th>Model</th><th>Najbardziej prawdopodobna klasa</th><th>Pewność</th></tr>
+            {% for model, label, confidence in predictions %}
+                <tr><td>{{ model }}</td><td>{{ label }}</td><td>{{ confidence }}</td></tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</body>
+</html>
